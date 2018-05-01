@@ -59,18 +59,18 @@ public class DrinkTest {
 
     @org.junit.Test
     //Null Test
-    public void testSetNameNull() {
+    public void testSetDrinkNameNull() {
         System.out.println("setNameNull");
-        testDrink.setName(null);
-        assertNull(testDrink.getName());
+        testDrink.setDrinkName(null);
+        assertNull(testDrink.getDrinkName());
 
     }
 
     //Empty Test 
-    public void testSetNameEmpty() {
+    public void testSetDrinkNameEmpty() {
         System.out.println("setNameEmpty");
-        testDrink.setName("");
-        assertEquals(testDrink.getName(), "");
+        testDrink.setDrinkName("");
+        assertEquals(testDrink.getDrinkName(), "");
 
     }
 
@@ -89,21 +89,22 @@ public class DrinkTest {
         canMake = false;
         assertFalse(testDrink.getCanMake());
     }
+    
 
     @org.junit.Test
     public void testGetRecipe() {
         System.out.println("getRecipe Americano");
-        Drink instance = null;
-        Map<String, Integer> expResult = null;
-        Map<String, Integer> result = instance.getRecipe();
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+       String[] recipe = {"Espresso", "Espresso", "Espresso"};
+       testDrink.setRecipe(recipe);
+       assertNotNull(testDrink.getRecipe());
+
+   
+        
     }
 
     @org.junit.Test
     public void testGetCost() {
         System.out.println("getCost Zero");
-
         assertEquals(testDrink.getCost(), 0, 0);
 
     }
@@ -115,9 +116,9 @@ public class DrinkTest {
     }
 
     @org.junit.Test
-    public void testGetName() {
+    public void testGetDrinkName() {
         System.out.println("get Drink Name");
-        assertTrue(testDrink.getName(), true);
+        assertTrue(testDrink.getDrinkName(), true);
     }
 
     @org.junit.Test

@@ -11,34 +11,34 @@ import java.util.Map;
  *
  * @author Sarah
  */
-public final class Drink implements Comparable<Drink>{
+public class Drink implements Comparable<Drink>{
     private Map<String, Integer> recipe = new HashMap<String, Integer>();
-    private String name;
+    private String drinkName;
     private double totalCost = 0;
     private boolean canMake = false;
 
-    public Drink(String name, String[] recipe){
-        this.name = name;
+    public Drink(String drinkName, String[] recipe){
+        this.drinkName = drinkName;
         setRecipe(recipe);
     }
 
     @Override
     public int compareTo(Drink drink){
-        return name.compareTo(drink.getName());
+        return drinkName.compareTo(drink.getDrinkName());
     }
 
     public void setRecipe(String[] recipe){
         for(String s : recipe){
             if(this.recipe.containsKey(s)){
-                this.recipe.put(s, this.recipe.get(s)+1);//increment if multiple units
+                this.recipe.put(s, this.recipe.get(s)+1); 
             }else{
-                this.recipe.put(s, 1);//insert first occurrence of ingredient
+                this.recipe.put(s, 1);
             }
         }
     }
 
-    public void setName(String name){
-        this.name = name;
+    public void setDrinkName(String drinkName){
+        this.drinkName = drinkName;
     }
 
     public void setCost(double totalCost){
@@ -57,8 +57,8 @@ public final class Drink implements Comparable<Drink>{
         return totalCost;
     }
 
-    public String getName(){
-        return name;
+    public String getDrinkName(){
+        return drinkName;
     }
 
     public boolean getCanMake(){
